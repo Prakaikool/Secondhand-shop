@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// GET all products
 router.get('/', (req, res) => {
     db.all(`SELECT * FROM products`, [], (err, rows) => {
         if (err) {
@@ -12,7 +11,6 @@ router.get('/', (req, res) => {
     });
 });
 
-// POST new product
 router.post('/', (req, res) => {
     const { name, description, price, image_url, category_id } = req.body;
     const query = `
@@ -26,6 +24,20 @@ router.post('/', (req, res) => {
             return res.status(500).json({ error: err.message });
         }
         res.status(201).json({ id: this.lastID });
+    });
+});
+
+router.get('/id', (req, res) => {
+    const id = req.params.id;
+
+    db.get('SELECT * FROM products WHERE id = ?', [id], (err, row) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        if (!row) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+        res.json(row);
     });
 });
 

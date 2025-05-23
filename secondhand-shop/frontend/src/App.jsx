@@ -8,6 +8,7 @@ import SalePage from './pages/SalePage';
 import AdminPage from './pages/AdminPage';
 import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/admin" element={<AdminPage />} />
+                <Route path="/products/:id" element={<ProductDetail />} />
             </Routes>
             <BottomNavbar />
         </Router>

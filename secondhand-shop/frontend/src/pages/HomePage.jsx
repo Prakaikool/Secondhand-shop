@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './CSS/Homepage.CSS';
+import './CSS/Homepage.css';
 
 function HomePage() {
     const [products, setProducts] = useState([]);
@@ -9,7 +9,7 @@ function HomePage() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:500/products')
+            .get('http://localhost:5000/products')
             .then((res) => setProducts(res.data))
             .catch((err) => console.error('Failed to load products', err));
     }, []);
@@ -24,7 +24,7 @@ function HomePage() {
                 <img
                     src="/clothes-cover-image.jpeg"
                     alt="Secondhand clothes"
-                    className="cover-iamge"
+                    className="cover-image"
                 />
                 <div className="search-container">
                     <input

@@ -9,6 +9,7 @@ import AdminPage from './pages/AdminPage';
 import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
 import ProductDetail from './pages/ProductDetail';
+import './main.css';
 
 function App() {
     return (

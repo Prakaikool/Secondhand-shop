@@ -4,3 +4,17 @@ body {
     background-color: #f6bcca;
     color: #482711;
 }
+
+@font-face {
+    font-family: 'Karla';
+    src: url('./assets/fonts/Karla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kumar One';
+    src: url('./assets/fonts/KumarOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

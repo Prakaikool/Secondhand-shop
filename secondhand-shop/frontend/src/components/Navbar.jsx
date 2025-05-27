@@ -2,12 +2,16 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
-        <header>
-            <div className="navbar-band">
-                <h2>
-                    Shupa Shupa <br />
-                    Secondhand
-                </h2>
+        <header className="navbar">
+            <div className="top-navbar">Worldwide shipping!</div>
+            <div className="navbar-main">
+                <div className="navbar-band">
+                    <h1>Shupa Shupa</h1>
+                    <h2> Secondhand</h2>
+                </div>
+                <Link to="/cart" className="cart-icon">
+                    CART
+                </Link>
             </div>
             <nav>
                 <ul className="nav-links"></ul>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './CSS/Homepage.CSS';
 
 function HomePage() {
     const [products, setProducts] = useState([]);
@@ -12,6 +13,10 @@ function HomePage() {
             .then((res) => setProducts(res.data))
             .catch((err) => console.error('Failed to load products', err));
     }, []);
+
+    const filteredProducts = products.filter((product) =>
+        product.name.toLowerCase().includes(search.toLowerCase())
+    );
 
     return (
         <div className="homepage">
@@ -33,6 +38,19 @@ function HomePage() {
                 </div>
             </div>
             <h2 className="section-title">See what's new</h2>
+            <div className="product-grid">
+                {filteredProducts.map((product) => (
+                    <Link
+                        to={`/products/${product.id}`}
+                        key={product.id}
+                        className="product-card"
+                    >
+                        <img src="" alt="" />
+                        <h3>{product.name}</h3>
+                        <p>{product.price} $</p>
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 }

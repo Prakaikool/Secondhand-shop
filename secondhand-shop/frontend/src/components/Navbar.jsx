@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import '/Secondhand-shop/secondhand-shop/frontend/src/pages/CSS/navbar.css';
 
 function Navbar() {
     return (
         <header className="navbar">
             <div className="top-navbar">Worldwide shipping!</div>
             <div className="navbar-main">
-                <div className="navbar-band">
+                <div className="navbar-brand">
                     <h1>Shupa Shupa</h1>
                     <h2> Secondhand</h2>
                 </div>

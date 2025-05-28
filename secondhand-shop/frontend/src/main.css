@@ -1,7 +1,9 @@
 body {
     margin: 0;
     font-family: 'Kumar One', serif !important;
-    background-color: #f6bcca;
+    background:
+    radial-gradient(ellipse at top, #F6BCCA, transparent),
+    radial-gradient(ellipse at bottom, #ca6a7e, transparent);
     color: #482711;
 }
 

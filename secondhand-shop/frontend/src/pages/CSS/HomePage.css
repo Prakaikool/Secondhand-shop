@@ -1,0 +1,18 @@
+.homepage {
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.cover-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

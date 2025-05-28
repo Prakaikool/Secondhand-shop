@@ -49,4 +49,20 @@ router.deleate('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+    const { name, description, price, image_url, category_id } = req.body;
+    const id = req.params.id;
+    const query = `
+    UPDATE products
+    SET name = ?, description = ?, price = ?, image_url = ?, category_id = ? WHERE id = ?`;
+    db.run(
+        query,
+        [name, description, price, image_url, category_id, id],
+        function (err) {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json({ updated: this.changes });
+        }
+    );
+});
+
 module.exports = router;

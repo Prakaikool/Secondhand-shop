@@ -10,9 +10,11 @@ function Navbar() {
                     <h1>Shupa Shupa</h1>
                     <h2> Secondhand</h2>
                 </div>
-                <Link to="/cart" className="cart-icon">
-                    CART
-                </Link>
+                <div className='cart'>
+                    <Link to="/cart" className="cart-icon">
+                        CART
+                    </Link>
+                </div>
             </div>
             <nav>
                 <ul className="nav-links">

@@ -16,3 +16,46 @@
     object-fit: cover;
     display: block;
 }
+
+.search-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background-color: #a9d197;
+    padding: 0.5rem;
+    width: 40%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-family: 'Kumar One', serif;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    color: #482711;
+}
+
+.search-button {
+    width: 5rem;
+    border: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.search-icon:hover {
+    transform: calc(1.1);
+    filter: brightness(1.5);
+}

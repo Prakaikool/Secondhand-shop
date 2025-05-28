@@ -36,7 +36,11 @@ function HomePage() {
                         className="search-input"
                     />
                     <button className="search-button">
-                        <img src={searchIcon} alt="Seach" />
+                        <img
+                            src={searchIcon}
+                            alt="Seach"
+                            className="search-icon"
+                        />
                     </button>
                 </div>
             </div>

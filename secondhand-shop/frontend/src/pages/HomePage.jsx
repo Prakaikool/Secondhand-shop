@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './CSS/Homepage.css';
+import searchIcon from '../assets/icons/search.png';
 
 function HomePage() {
     const [products, setProducts] = useState([]);
@@ -34,7 +35,9 @@ function HomePage() {
                         onChange={(e) => setSearch(e.target.value)}
                         className="search-input"
                     />
-                    <button className="search-button"></button>
+                    <button className="search-button">
+                        <img src={searchIcon} alt="Seach" />
+                    </button>
                 </div>
             </div>
             <h2 className="section-title">See what's new</h2>

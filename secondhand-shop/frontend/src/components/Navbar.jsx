@@ -13,7 +13,7 @@ function Navbar() {
                 </div>
                 <div className="cart">
                     <Link to="/cart" className="cart-icon">
-                        <img src="{cartIcon}" alt="Cart" className="icon" />
+                        <img src={cartIcon} alt="Cart" className="icon" />
                     </Link>
                 </div>
             </div>

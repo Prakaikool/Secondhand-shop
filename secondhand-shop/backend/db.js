@@ -11,7 +11,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
 });
 
-// Create products and categories tables if not exist
 db.serialize(() => {
     db.run(`
     CREATE TABLE IF NOT EXISTS categories (

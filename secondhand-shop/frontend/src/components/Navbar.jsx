@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '/Secondhand-shop/secondhand-shop/frontend/src/pages/CSS/navbar.css';
+import cartIcon from '../assets/icons/cart.png';
 
 function Navbar() {
     return (
@@ -10,9 +11,9 @@ function Navbar() {
                     <h1>Shupa Shupa</h1>
                     <h2> Secondhand</h2>
                 </div>
-                <div className='cart'>
+                <div className="cart">
                     <Link to="/cart" className="cart-icon">
-                        CART
+                        <img src="{cartIcon}" alt="Cart" className="icon" />
                     </Link>
                 </div>
             </div>

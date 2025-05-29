@@ -24,4 +24,11 @@ const isAdmin = (req, res, next) => {
     }
 };
 
+router.post('/upload', isAdmin, upload.single('image'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ error: 'No file uploaded' });
+    }
+    res.status(201).json({ imageUrl: `/uploads/${req.file.filename}` });
+});
 
+module.exports = router;

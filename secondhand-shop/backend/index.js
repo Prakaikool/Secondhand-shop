@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+app.use('/uploads', express.static('uploads'));
 
 const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/categories');

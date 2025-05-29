@@ -7,6 +7,8 @@ const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/categories');
 const db = require('./db');
 
+const adminRoutes = require('./routes/admin');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -19,6 +21,7 @@ app.get('/', (req, res) => {
 
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
+app.use('/admin', adminRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

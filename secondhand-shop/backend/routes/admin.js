@@ -14,3 +14,14 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+const isAdmin = (req, res, next) => {
+    const token = req.headers.authorization;
+    if (token === 'PKK Second Shupa admin') {
+        next();
+    } else {
+        res.status(403).json({ error: 'Only admin can upload' });
+    }
+};
+
+

@@ -26,9 +26,6 @@ function Navbar() {
                         <Link to="/shop">SHOP</Link>
                     </li>
                     <li>
-                        <Link to="/sale">SALE</Link>
-                    </li>
-                    <li>
                         <Link to="/about">ABOUT</Link>
                     </li>
                     <li>

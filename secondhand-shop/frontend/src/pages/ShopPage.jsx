@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './CSS/ShopPage.css';
 
 function ShopPage() {
     const [products, setProducts] = useState([]);

@@ -3,13 +3,17 @@
     padding: 2rem;
     font-family: 'Karla', sans-serif;
     color: #482711;
+    font-size: 1rem;
 }
 
 .bottom-content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .shop-info {
@@ -27,6 +31,7 @@
 
 h2 {
     font-family: 'Kumar One', serif;
+    font-size: 1rem;
 }
 
 .footer-links ul {
@@ -42,7 +47,6 @@ h2 {
 .footer-links a {
     color: #482711;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .footer-links a:hover {
@@ -53,11 +57,8 @@ h2 {
     text-align: center;
     padding: 0.5rem 0;
     font-size: 1rem;
-    background-color: #482711;
-    color: white;
+    background-color: #f6bcca;
+    color: #482711;
     margin-top: 2rem;
-    width: 100vw;
-    margin-left: -50vw;
-    left: 50%;
-    position: relative;
+    width: 100%;
 }

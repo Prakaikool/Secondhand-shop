@@ -6,7 +6,7 @@ const BottomNavbar = () => {
         <footer className="bottom-navbar">
             <div className="bottom-content">
                 <div className="shop-info">
-                    <h2>About</h2>
+                    <h2>About...</h2>
                     <p>
                         Shupa Shupa is a small secondhand shop built from love
                         and sustainability. Every item has a story. Let's make
@@ -24,19 +24,19 @@ const BottomNavbar = () => {
                     <h2>Menu</h2>
                     <ul>
                         <li>
-                            <Link to="/shop">SHOP</Link>
+                            <Link to="/shop">Shop</Link>
                         </li>
                         <li>
-                            <Link to="/contact">CONTACT</Link>
+                            <Link to="/contact">Contact</Link>
                         </li>
                         <li>
-                            <Link to="/customer-service">CUSTOMER SERVICE</Link>
+                            <Link to="/customer-service">Customer service</Link>
                         </li>
                         <li>
-                            <Link to="/shipping-policy">SHIPPING POLICY</Link>
+                            <Link to="/shipping-policy">Shipping policy</Link>
                         </li>
                         <li>
-                            <Link to="/return-policy">RETURN POLICY</Link>
+                            <Link to="/return-policy">Return policy</Link>
                         </li>
                     </ul>
                 </div>

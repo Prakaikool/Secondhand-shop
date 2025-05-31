@@ -1,0 +1,37 @@
+.about-container {
+    padding: 3rem 2rem;
+    color: #482711;
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+}
+
+.about-title {
+    font-family: 'Kumar One', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-image {
+    width: 20rem;
+    height: 24rem;
+    background-color: #eaeaea;
+    background-image: url('/image-,png');
+    background-position: center;
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
+}

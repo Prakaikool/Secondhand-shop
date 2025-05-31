@@ -18,7 +18,7 @@ function AboutPage() {
                     </p>
                     <p>
                         By choosing secondhand, you're not just saving
-                        money—you're saving the planet, one garment at a time.
+                        money. You're saving the planet, one garment at a time.
                         We believe fashion should be slow, stylish, and
                         sustainable.
                     </p>

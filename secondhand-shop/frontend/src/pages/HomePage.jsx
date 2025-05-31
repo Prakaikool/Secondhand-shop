@@ -52,7 +52,10 @@ function HomePage() {
                         key={product.id}
                         className="product-card"
                     >
-                        <img src="" alt="" />
+                        <img
+                            src={`http://localhost:5000${product.image_url}`}
+                            alt={product.name}
+                        />
                         <h3>{product.name}</h3>
                         <p>{product.price} $</p>
                     </Link>

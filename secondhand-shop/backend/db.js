@@ -30,6 +30,15 @@ db.serialize(() => {
       FOREIGN KEY (category_id) REFERENCES categories(id)
     )
   `);
+    db.run(`INSERT INTO categories (name) VALUES ('Outerwear'), ('Bottoms')`);
+
+    db.run(`
+      INSERT INTO products (name, description, price, image_url, category_id)
+      VALUES
+          ('Cream Jacket', 'Warm vintage cream jacket', 25, '/uploads/cream-jacket.jpg', 1),
+          ('Floral Skirt', 'Colorful secondhand floral skirt', 15, '/uploads/floral-skirt.jpg', 2),
+          ('Denim Shirt', 'Retro denim shirt for casual wear', 20, '/uploads/denim-shirt.jpg', 1)
+  `);
 });
 
 module.exports = db;

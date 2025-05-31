@@ -19,7 +19,27 @@ const BottomNavbar = () => {
                         </a>
                     </p>
                 </div>
+                <div className="footer-links">
+                    <ul>
+                        <li>
+                            <Link to="/shop">Shop</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact">Contact</Link>
+                        </li>
+                        <li>
+                            <Link to="/customer-service">Customer service</Link>
+                        </li>
+                        <li>
+                            <Link to="/shipping-policy">Shipping Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/return-policy">Return Policy</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <div className="copyright">© Shupa Shupa Secondhand 2025</div>
         </footer>
     );
 };

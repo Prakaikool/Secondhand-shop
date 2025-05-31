@@ -41,7 +41,7 @@ router.get('/id', (req, res) => {
     });
 });
 
-router.deleate('/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     const id = req.params.id;
     db.run('DELETE FROM products WHERE id = ?', [id], function (err) {
         if (err) return res.status(500).json({ error: err.message });
@@ -55,6 +55,7 @@ router.put('/:id', (req, res) => {
     const query = `
     UPDATE products
     SET name = ?, description = ?, price = ?, image_url = ?, category_id = ? WHERE id = ?`;
+
     db.run(
         query,
         [name, description, price, image_url, category_id, id],
@@ -63,11 +64,6 @@ router.put('/:id', (req, res) => {
             res.json({ updated: this.changes });
         }
     );
-});
-
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Something went wrong!' });
 });
 
 module.exports = router;

@@ -3,6 +3,7 @@
     color: #482711;
     font-family: 'Karla', sans-serif;
     text-align: center;
+    margin-bottom: 3.5rem;
 }
 
 .about-title {
@@ -24,13 +25,19 @@
 
 .about-image {
     width: 20rem;
-    height: 24rem;
-    background-color: #eaeaea;
-    background-image: url('/image-,png');
+    height: 26rem;
+    background-color: transparent;
+    background-image: url('/shupa-ownwer.jpg');
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
+  padding-top: 0.2rem;
     max-width: 600px;
     font-size: 1rem;
     line-height: 1.6;

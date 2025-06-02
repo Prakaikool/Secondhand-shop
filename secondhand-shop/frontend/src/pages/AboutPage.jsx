@@ -5,12 +5,7 @@ function AboutPage() {
         <div className="about-container">
             <h2 className="about-title">About us</h2>
             <div className="about-content">
-                <div className="about-image">
-                    <img
-                        src="/shupa-owner.jpeg"
-                        alt="Shupa taem"
-                    />
-                </div>
+                <div className="about-image"></div>
                 <div className="about-text">
                     <p>
                         Welcome to Shupa Shupa, <br />

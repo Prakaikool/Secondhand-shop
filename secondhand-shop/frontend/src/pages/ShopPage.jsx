@@ -9,6 +9,8 @@ function ShopPage() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const [addedItemId, setAddedItemId] = useState(null);
+
     const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
@@ -63,10 +65,18 @@ function ShopPage() {
                         </Link>
                         <button
                             className="add-to-cart"
-                            onClick={() => addToCart(product)}
+                            onClick={() => {
+                                addToCart(product);
+                                setAddedItemId(product.id);
+                                setTimeout(() => setAddedItemId(null), 1500);
+                            }}
                         >
-                            Add to Cart
+                            ADD TO CART
                         </button>
+
+                        {addedItemId === product.id && (
+                            <p className="added-msg">ADDED!</p>
+                        )}
                     </div>
                 ))}
             </div>

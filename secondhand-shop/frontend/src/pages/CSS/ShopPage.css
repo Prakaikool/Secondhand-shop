@@ -1,5 +1,5 @@
 .shop-page {
-  padding: 3rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .shop-page h2 {
@@ -45,26 +45,26 @@
 }
 
 .product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border: 4px solid #a9d197;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  width: 100%;
-  max-width: 250px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  color: #482711;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: 4px solid #a9d197;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: #482711;
 }
 .product-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .product-card h3 {
@@ -75,11 +75,32 @@
 
 .product-card p {
     font-size: 1rem;
-    color: #A9D197;
+    color: #a9d197;
     font-weight: bold;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart {
+    padding: 0.5rem 1rem;
+    background-color: #56894f;
+    color: #f6bcca;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Kumar One', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.add-to-cart:hover {
+    background-color: #2e5729;
+}
+
+.added-msg {
+    color: #a9d197 !important;
 }

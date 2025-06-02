@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import CartContext from '../components/CartContext';
 import './CSS/Cart.css';
+import { Link } from 'react-router-dom';
 
 function CartPage() {
     const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
@@ -14,7 +15,12 @@ function CartPage() {
         <div className="cart-page">
             <h2>Your Cart</h2>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty.</p>
+                <div className="empty-cart">
+                    <p>Your cart is empty.</p>
+                    <Link to="/shop" className="shop-link">
+                        SHOP OUR PRODUCTS
+                    </Link>
+                </div>
             ) : (
                 <>
                     <ul className="cart-list">
@@ -41,8 +47,9 @@ function CartPage() {
                     <div className="cart-total">
                         <h3>Total: ${total.toFixed(2)}</h3>
                         <button onClick={clearCart} className="clear-button">
-                            Clear Cart
+                            CLEAR CART
                         </button>
+                        <button className="pay-button">CHECKOUT</button>
                     </div>
                 </>
             )}

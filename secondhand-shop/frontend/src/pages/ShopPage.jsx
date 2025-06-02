@@ -13,11 +13,10 @@ function ShopPage() {
             .get('http://localhost:5000/products')
             .then((res) => setProducts(res.data))
             .catch((err) => console.error('Failed to load products', err));
-
         axios
             .get('http://localhost:5000/categories')
             .then((res) => setCategories(res.data))
-            .catch((err) => console.error('Fail to load categories', err));
+            .catch((err) => console.error('Failed to load categories', err));
     }, []);
 
     const filteredProducts =
@@ -29,9 +28,10 @@ function ShopPage() {
 
     return (
         <div className="shop-page">
-            <h2>All products</h2>
+            <h2>All Products</h2>
+
             <div className="filter-container">
-                <label htmlFor="category">Filter by Category: </label>
+                <label htmlFor="category">Filter by Category:</label>
                 <select
                     id="category"
                     value={selectedCategory}
@@ -45,6 +45,7 @@ function ShopPage() {
                     ))}
                 </select>
             </div>
+
             <div className="product-container">
                 {filteredProducts.map((product) => (
                     <Link
@@ -52,7 +53,10 @@ function ShopPage() {
                         className="product-card"
                         key={product.id}
                     >
-                        <img src={product.image_url} alt={product.name} />
+                        <img
+                            src={`http://localhost:5000${product.image_url}`}
+                            alt={product.name}
+                        />
                         <h3>{product.name}</h3>
                         <p>{product.price} $</p>
                     </Link>

@@ -32,7 +32,7 @@ function ShopPage() {
             <h2>All Products</h2>
 
             <div className="filter-container">
-                <label htmlFor="category">Filter by Category:</label>
+                <label htmlFor="category">Filter by Category :</label>
                 <select
                     id="category"
                     value={selectedCategory}

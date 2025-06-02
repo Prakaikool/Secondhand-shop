@@ -1,0 +1,85 @@
+.shop-page {
+  padding: 3rem 2rem;
+}
+
+.shop-page h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #482711;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0.5rem;
+    border-top: 1px solid #482711;
+    border-bottom: 1px solid #482711;
+    font-size: 0.9rem;
+    color: #482711;
+}
+
+.filter-container label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.filter-container select {
+    padding: 0.4rem 0.6rem;
+    font-family: 'Kumar One', serif;
+    border: 1px solid #482711;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #482711;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 4px solid #a9d197;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 250px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: #482711;
+}
+.product-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+    color: #482711;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #A9D197;
+    font-weight: bold;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

@@ -115,6 +115,7 @@
 .product-card p {
     font-size: 1rem;
     color: #a9d197;
+    font-weight: bold;
 }
 
 .product-card:hover {

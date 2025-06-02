@@ -15,6 +15,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
 }
 
 .search-container {
@@ -28,6 +29,7 @@
     width: 40%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     opacity: 0.9;
+    border-radius: 8px;
 }
 
 .search-input {
@@ -59,4 +61,60 @@
 .search-icon:hover {
     transform: calc(1.1);
     filter: brightness(1.5);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 6rem;
+    font-family: 'Kumar One', serif;
+    color: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 0 4rem;
+    justify-items: center;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 4px solid #A9D197;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: #482711;
+}
+
+.product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family: 'Kumar One', serif;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #A9D197;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

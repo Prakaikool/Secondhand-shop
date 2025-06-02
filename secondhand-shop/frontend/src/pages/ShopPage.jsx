@@ -13,6 +13,7 @@ function ShopPage() {
             .get('http://localhost:5000/products')
             .then((res) => setProducts(res.data))
             .catch((err) => console.error('Failed to load products', err));
+
         axios
             .get('http://localhost:5000/categories')
             .then((res) => setCategories(res.data))

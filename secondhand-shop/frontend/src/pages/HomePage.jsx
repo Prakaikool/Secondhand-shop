@@ -19,6 +19,8 @@ function HomePage() {
         product.name.toLowerCase().includes(search.toLowerCase())
     );
 
+    const newProducts = filteredProducts.slice(0, 3);
+
     return (
         <div className="homepage">
             <div className="cover-container">
@@ -46,7 +48,7 @@ function HomePage() {
             </div>
             <h2 className="section-title">See what's new</h2>
             <div className="product-grid">
-                {filteredProducts.map((product) => (
+                {newProducts.map((product) => (
                     <Link
                         to={`/products/${product.id}`}
                         key={product.id}
@@ -57,7 +59,7 @@ function HomePage() {
                             alt={product.name}
                         />
                         <h3>{product.name}</h3>
-                        <p>{product.price} $</p>
+                        <p>${product.price}</p>
                     </Link>
                 ))}
             </div>

@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './CSS/ShopPage.css';
+import { useContext } from 'react';
+import CartContext from '../components/CartContext';
 
 function ShopPage() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         axios
@@ -49,18 +52,22 @@ function ShopPage() {
 
             <div className="product-container">
                 {filteredProducts.map((product) => (
-                    <Link
-                        to={`/products/${product.id}`}
-                        className="product-card"
-                        key={product.id}
-                    >
-                        <img
-                            src={`http://localhost:5000${product.image_url}`}
-                            alt={product.name}
-                        />
-                        <h3>{product.name}</h3>
-                        <p>{product.price} $</p>
-                    </Link>
+                    <div className="product-card" key={product.id}>
+                        <Link to={`/products/${product.id}`}>
+                            <img
+                                src={`http://localhost:5000${product.image_url}`}
+                                alt={product.name}
+                            />
+                            <h3>{product.name}</h3>
+                            <p>{product.price} $</p>
+                        </Link>
+                        <button
+                            className="add-to-cart"
+                            onClick={() => addToCart(product)}
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
                 ))}
             </div>
         </div>

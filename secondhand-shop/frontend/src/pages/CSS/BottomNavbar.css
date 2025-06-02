@@ -2,7 +2,7 @@
     background-color: #a4cd90;
     padding: 2rem;
     font-family: 'Karla', sans-serif;
-    color: #482711;
+    color: #482711bf;
     font-size: 1rem;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .shop-info a {
-    color: #482711;
+    color: #482711bf;
     text-decoration: none;
 }
 
@@ -45,7 +45,7 @@ h2 {
 }
 
 .footer-links a {
-    color: #482711;
+    color: #482711bf;
     text-decoration: none;
 }
 
@@ -58,7 +58,7 @@ h2 {
     padding: 0.5rem 0;
     font-size: 1rem;
     background-color: #f6bcca;
-    color: #482711;
+    color: #482711bf;
     margin-top: 2rem;
     width: 100%;
 }

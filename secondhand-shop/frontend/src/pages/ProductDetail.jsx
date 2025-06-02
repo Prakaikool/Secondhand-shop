@@ -27,7 +27,7 @@ function ProductDetail() {
             />
             <div className="product-detail-info">
                 <h2>{product.name}</h2>
-                <p className="product-price">{product.price} $</p>
+                <p className="product-price">${product.price}</p>
                 <p className="product-description">{product.description}</p>
                 <button
                     className="add-to-cart"

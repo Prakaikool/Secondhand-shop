@@ -87,7 +87,7 @@
 .add-to-cart {
     padding: 0.5rem 1rem;
     background-color: #56894f;
-    color: #f6bcca;
+    color: #f6bcca !important;
     border: none;
     border-radius: 8px;
     font-family: 'Kumar One', serif;

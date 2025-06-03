@@ -33,7 +33,7 @@ function ProductDetail() {
                     className="add-to-cart"
                     onClick={() => addToCart(product)}
                 >
-                    🛒 Add to Cart
+                  ADD TO CART
                 </button>
             </div>
         </div>

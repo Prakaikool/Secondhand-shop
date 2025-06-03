@@ -8,11 +8,15 @@ function ProductDetail() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const { addToCart } = useContext(CartContext);
+    const [mainImage, setMainImage] = useState('');
 
     useEffect(() => {
         axios
             .get(`http://localhost:5000/products/${id}`)
-            .then((res) => setProduct(res.data))
+            .then((res) => {
+                setProduct(res.data);
+                setMainImage(res.data.images?.[0] || '/fallback.jpg');
+            })
             .catch((err) => console.error('Failed to load product', err));
     }, [id]);
 
@@ -20,20 +24,35 @@ function ProductDetail() {
 
     return (
         <div className="product-detail">
-            <img
-                src={`http://localhost:5000${product.image_url}`}
-                alt={product.name}
-                className="product-detail-img"
-            />
+            <div className="product-image-section">
+                <img
+                    src={`http://localhost:5000${mainImage}`}
+                    alt={product.name}
+                    className="product-detail-img"
+                />
+                <div className="thumbnail-row">
+                    {product.images.map((img, index) => (
+                        <img
+                            key={index}
+                            src={`http://localhost:5000${img}`}
+                            alt={`thumbnail-${index}`}
+                            className="thumb"
+                            onClick={() => setMainImage(img)}
+                        />
+                    ))}
+                </div>
+            </div>
+
             <div className="product-detail-info">
                 <h2>{product.name}</h2>
                 <p className="product-price">${product.price}</p>
                 <p className="product-description">{product.description}</p>
+                <p className="product-size">Size: {product.size}</p>
                 <button
                     className="add-to-cart"
                     onClick={() => addToCart(product)}
                 >
-                  ADD TO CART
+                    ADD TO CART
                 </button>
             </div>
         </div>

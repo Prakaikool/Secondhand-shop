@@ -9,6 +9,7 @@ function ProductDetail() {
     const [product, setProduct] = useState(null);
     const { addToCart, cartMessage, lastTriedItemId } = useContext(CartContext);
     const [mainImage, setMainImage] = useState('');
+    const [addedItemId, setAddedItemId] = useState(null);
 
     useEffect(() => {
         axios
@@ -55,10 +56,17 @@ function ProductDetail() {
 
                 <button
                     className="add-to-cart"
-                    onClick={() => addToCart(product)}
+                    onClick={() => {
+                        addToCart(product);
+                        setAddedItemId(product.id);
+                        setTimeout(() => setAddedItemId(null), 1500);
+                    }}
                 >
                     ADD TO CART
                 </button>
+                {addedItemId === product.id && (
+                    <p className="added-msg">ITEM ADDED!</p>
+                )}
             </div>
         </div>
     );

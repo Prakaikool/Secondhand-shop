@@ -87,7 +87,13 @@
 }
 
 .cart-warning {
-  color: #b23b3b;
-  font-weight: bold;
-  margin-top: 0.5rem;
+    color: #b23b3b;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.added-msg {
+    font-family: 'Kumar One', serif;
+    color: #56894f !important;
+    text-align: center;
 }

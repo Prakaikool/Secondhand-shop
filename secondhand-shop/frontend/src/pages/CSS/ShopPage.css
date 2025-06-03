@@ -45,7 +45,7 @@
 }
 
 .product-card a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .product-card {
@@ -85,7 +85,7 @@
 
 .product-card p {
     font-size: 1rem;
-    color: #a9d197;
+    color: #56894f;
     font-weight: bold;
     margin-bottom: 1.2rem;
 }
@@ -113,5 +113,5 @@
 }
 
 .added-msg {
-    color: #a9d197 !important;
+    color: #56894f !important;
 }

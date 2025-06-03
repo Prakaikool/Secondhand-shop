@@ -4,19 +4,32 @@ const CartContext = createContext();
 
 export function CartProvider({ children }) {
     const [cartItems, setCartItems] = useState([]);
+    const [cartMessage, setCartMessage] = useState('');
 
     const addToCart = (product) => {
-        setCartItems((prev) => {
-            const existing = prev.find((item) => item.id === product.id);
-            if (existing) {
-                return prev.map((item) =>
-                    item.id === product.id
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item
+        const existingItem = cartItems.find((item) => item.id === product.id);
+
+        if (existingItem) {
+            if (existingItem.quantity < product.stock) {
+                setCartItems((prev) =>
+                    prev.map((item) =>
+                        item.id === product.id
+                            ? { ...item, quantity: item.quantity + 1 }
+                            : item
+                    )
                 );
+                setCartMessage('');
+            } else {
+                setCartMessage('Out of stock!');
             }
-            return [...prev, { ...product, quantity: 1 }];
-        });
+        } else {
+            if (product.stock > 0) {
+                setCartItems((prev) => [...prev, { ...product, quantity: 1 }]);
+                setCartMessage('');
+            } else {
+                setCartMessage('Out of stock!');
+            }
+        }
     };
 
     const removeFromCart = (id) => {
@@ -27,15 +40,18 @@ export function CartProvider({ children }) {
         setCartItems([]);
     };
 
-    const value = {
-        cartItems,
-        addToCart,
-        removeFromCart,
-        clearCart
-    };
-
     return (
-        <CartContext.Provider value={value}>{children}</CartContext.Provider>
+        <CartContext.Provider
+            value={{
+                cartItems,
+                addToCart,
+                removeFromCart,
+                clearCart,
+                cartMessage
+            }}
+        >
+            {children}
+        </CartContext.Provider>
     );
 }
 

@@ -61,7 +61,7 @@ function ShopPage() {
                                 alt={product.name}
                             />
                             <h3>{product.name}</h3>
-                            <p>{product.price} $</p>
+                            <p>${product.price}</p>
                         </Link>
                         <button
                             className="add-to-cart"

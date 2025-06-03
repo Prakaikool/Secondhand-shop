@@ -56,9 +56,9 @@
 }
 
 .thumbnail-row {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .thumb {
@@ -78,5 +78,10 @@
 .product-size {
     color: #482711bf;
     margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.product-stock {
+    color: #482711bf;
     line-height: 1.5;
 }

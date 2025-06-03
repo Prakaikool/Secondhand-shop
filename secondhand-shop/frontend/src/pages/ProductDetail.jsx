@@ -48,6 +48,7 @@ function ProductDetail() {
                 <p className="product-price">${product.price}</p>
                 <p className="product-description">{product.description}</p>
                 <p className="product-size">Size: {product.size}</p>
+                <p className="product-stock">Stock: {product.stock}</p>
                 <button
                     className="add-to-cart"
                     onClick={() => addToCart(product)}

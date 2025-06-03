@@ -5,12 +5,14 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
     const [cartItems, setCartItems] = useState([]);
     const [cartMessage, setCartMessage] = useState('');
+    const [lastTriedItemId, setLastTriedItemId] = useState(null);
 
     const addToCart = (product) => {
         const existingItem = cartItems.find((item) => item.id === product.id);
+        const currentQty = existingItem ? existingItem.quantity : 0;
 
-        if (existingItem) {
-            if (existingItem.quantity < product.stock) {
+        if (currentQty < product.stock) {
+            if (existingItem) {
                 setCartItems((prev) =>
                     prev.map((item) =>
                         item.id === product.id
@@ -18,26 +20,31 @@ export function CartProvider({ children }) {
                             : item
                     )
                 );
-                setCartMessage('');
             } else {
-                setCartMessage('Out of stock!');
-            }
-        } else {
-            if (product.stock > 0) {
                 setCartItems((prev) => [...prev, { ...product, quantity: 1 }]);
-                setCartMessage('');
-            } else {
-                setCartMessage('Out of stock!');
             }
+
+            setCartMessage('');
+            setLastTriedItemId(null);
+        } else {
+            setCartMessage('Out of stock!');
+            setLastTriedItemId(product.id);
         }
     };
 
     const removeFromCart = (id) => {
         setCartItems((prev) => prev.filter((item) => item.id !== id));
+
+        if (lastTriedItemId === id) {
+            setCartMessage('');
+            setLastTriedItemId(null);
+        }
     };
 
     const clearCart = () => {
         setCartItems([]);
+        setCartMessage('');
+        setLastTriedItemId(null);
     };
 
     return (
@@ -47,7 +54,8 @@ export function CartProvider({ children }) {
                 addToCart,
                 removeFromCart,
                 clearCart,
-                cartMessage
+                cartMessage,
+                lastTriedItemId
             }}
         >
             {children}

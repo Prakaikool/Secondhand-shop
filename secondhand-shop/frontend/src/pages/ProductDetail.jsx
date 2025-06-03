@@ -7,7 +7,7 @@ import './CSS/ProductsDetail.css';
 function ProductDetail() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    const { addToCart } = useContext(CartContext);
+    const { addToCart, cartMessage, lastTriedItemId } = useContext(CartContext);
     const [mainImage, setMainImage] = useState('');
 
     useEffect(() => {
@@ -49,6 +49,10 @@ function ProductDetail() {
                 <p className="product-description">{product.description}</p>
                 <p className="product-size">Size: {product.size}</p>
                 <p className="product-stock">Stock: {product.stock}</p>
+                {lastTriedItemId === product.id && cartMessage && (
+                    <p className="cart-warning">{cartMessage}</p>
+                )}
+
                 <button
                     className="add-to-cart"
                     onClick={() => addToCart(product)}

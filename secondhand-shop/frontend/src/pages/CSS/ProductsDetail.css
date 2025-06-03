@@ -1,76 +1,82 @@
 .product-detail {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5rem;
-  padding: 5rem 2rem;
-  font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    padding: 5rem 2rem;
+    font-family: 'Karla', sans-serif;
 }
 
 .product-detail-img {
-  width: 320px;
-  height: auto;
-  border-radius: 8px;
-  border: 4px solid #a9d197;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid #a9d197;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-detail-info {
-  max-width: 500px;
+    max-width: 500px;
 }
 
 .product-detail-info h2 {
-  font-family: 'Kumar One', serif;
-  font-size: 1.8rem;
-  color: #482711;
-  margin-bottom: 0.5rem;
+    font-family: 'Kumar One', serif;
+    font-size: 1.8rem;
+    color: #482711;
+    margin-bottom: 0.5rem;
 }
 
 .product-price {
-  color: #4f8148;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0.5rem 0 1rem 0;
+    color: #4f8148;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem 0;
 }
 
 .product-description {
-  color: #482711bf;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+    color: #482711bf;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
 .add-to-cart {
-  background-color: #56894f;
-  color: #f6bcca;
-  font-size: 1rem;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #56894f;
+    color: #f6bcca;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart:hover {
-  background-color: #2e5729;
+    background-color: #2e5729;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .thumb {
-  width: 80px;
-  height: 100px;
-  object-fit: cover;
-  border: 4px solid #a9d197;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border: 4px solid #a9d197;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
 }
 
 .thumb:hover {
-  background-color: #a9d197;
+    background-color: #a9d197;
 }
 
 .product-size {
-  color: #482711bf;
-  margin-bottom: 2rem;
-  line-height: 1.5;
+    color: #482711bf;
+    margin-bottom: 2rem;
+    line-height: 1.5;
 }

@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt');
 
 router.post('/register', async (req, res) => {
     const { email, password, name, role = 'user' } = req.body;
+    
+    console.log('Registration received:', email, name);
 
     try {
         const existingUser = await db.query(

@@ -8,10 +8,19 @@ const adminRoutes = require('./routes/admin');
 const usersRoute = require('./routes/users');
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(
+    cors({
+        origin: 'http://localhost:5173',
+        exposedHeaders: ['Content-Range']
+    })
+);
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/admin', adminRoutes);

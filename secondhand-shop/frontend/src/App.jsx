@@ -8,7 +8,6 @@ import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
 import ProductDetail from './pages/ProductDetail';
-import AdminApp from './admin/AdminApp';
 import './main.css';
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
-                <Route path="/admin/*" element={<AdminApp />} />
             </Routes>
             <BottomNavbar />
         </>

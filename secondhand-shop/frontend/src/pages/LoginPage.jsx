@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CSS/LoginPage.css';
 
@@ -17,18 +17,15 @@ function LoginPage() {
                 password
             });
 
-            const user = res.data;
+            const { user } = res.data;
 
             localStorage.setItem('userId', user.id);
             localStorage.setItem('userName', user.name);
-            localStorage.setItem('userRole', user.role);
 
-            if (user.email === 'admin@admin.com') {
-                localStorage.setItem('isAdmin', 'true');
+            if (user.role === 'admin') {
                 navigate('/admin/products');
             } else {
-                localStorage.setItem('isUser', 'true');
-                navigate('/profile');
+                navigate('/');
             }
         } catch (err) {
             if (err.response && err.response.status === 401) {
@@ -40,8 +37,8 @@ function LoginPage() {
     };
 
     return (
-        <div className="login-page">
-            <h2>Login Page</h2>
+        <div className="login-container">
+            <h1>Login Page</h1>
             <form onSubmit={handleLogin}>
                 <input
                     type="email"
@@ -60,16 +57,6 @@ function LoginPage() {
                 <button type="submit">Login</button>
                 {error && <p className="error">{error}</p>}
             </form>
-            <p className="toggle-msg">
-                <Link to="/register" className="register-link">
-                    Register here
-                </Link>
-            </p>
-            <p className="toggle-msg">
-                <Link to="/register" className="register-link">
-                    Forget password?
-                </Link>
-            </p>
         </div>
     );
 }

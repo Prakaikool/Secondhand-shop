@@ -5,6 +5,7 @@ const path = require('path');
 const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/categories');
 const adminRoutes = require('./routes/admin');
+const usersRoute = require('./routes/users');
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/admin', adminRoutes);
+app.use('/users', usersRoute);
 
 app.get('/', (req, res) => {
     res.send('Server is running');

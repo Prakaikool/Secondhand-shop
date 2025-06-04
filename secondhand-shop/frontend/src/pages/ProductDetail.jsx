@@ -57,9 +57,11 @@ function ProductDetail() {
                 <button
                     className="add-to-cart"
                     onClick={() => {
-                        addToCart(product);
-                        setAddedItemId(product.id);
-                        setTimeout(() => setAddedItemId(null), 1500);
+                        const wasAdded = addToCart(product);
+                        if (wasAdded) {
+                            setAddedItemId(product.id);
+                            setTimeout(() => setAddedItemId(null), 1500);
+                        }
                     }}
                 >
                     ADD TO CART

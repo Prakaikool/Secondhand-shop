@@ -26,9 +26,11 @@ export function CartProvider({ children }) {
 
             setCartMessage('');
             setLastTriedItemId(null);
+            return true;
         } else {
             setCartMessage('Out of stock!');
             setLastTriedItemId(product.id);
+            return false;
         }
     };
 

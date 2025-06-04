@@ -4,7 +4,7 @@ const db = require('../db');
 const bcrypt = require('bcrypt');
 
 router.post('/register', async (req, res) => {
-    const { email, password, name } = req.body;
+    const { email, password, name, role = 'user' } = req.body;
 
     try {
         const existingUser = await db.query(
@@ -12,19 +12,19 @@ router.post('/register', async (req, res) => {
             [email]
         );
         if (existingUser.rows.length > 0) {
-            return res.status(400).json({ error: 'Email already in use' });
+            return res.status(400).json({ error: 'Email is already in use' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
         await db.query(
-            'INSERT INTO users (email, password, name) VALUES ($1, $2, $3)',
-            [email, hashedPassword, name]
+            'INSERT INTO users (email, password, name, role) VALUES ($1, $2, $3, $4)',
+            [email, hashedPassword, name, role]
         );
 
-        res.status(201).json({ message: 'User registered successfully' });
+        res.status(201).json({ message: 'Registration successful' });
     } catch (err) {
-        console.error(err);
+        console.error('Registration Error:', err);
         res.status(500).json({ error: 'Server error' });
     }
 });
@@ -38,20 +38,26 @@ router.post('/login', async (req, res) => {
         ]);
         const user = result.rows[0];
 
-        if (!user)
-            return res.status(401).json({ error: 'Invalid' });
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
 
-        const validPassword = await bcrypt.compare(password, user.password);
-        if (!validPassword)
-            return res.status(401).json({ error: 'Invalid' });
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: 'Invalid email or password' });
+        }
 
         res.json({
             message: 'Login successful',
-            userId: user.id,
-            name: user.name
+            user: {
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                role: user.role
+            }
         });
     } catch (err) {
-        console.error(err);
+        console.error('Login Error:', err);
         res.status(500).json({ error: 'Server error' });
     }
 });

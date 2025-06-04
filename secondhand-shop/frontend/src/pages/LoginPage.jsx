@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './CSS/LoginPage.css';
 
@@ -31,12 +31,12 @@ function LoginPage() {
                 navigate('/profile');
             }
         } catch (err) {
-          if (err.response && err.response.status === 401) {
-              setError('Wrong email or password');
-          } else {
-              setError('Server error. Please try again later.');
-          }
-      }
+            if (err.response && err.response.status === 401) {
+                setError('Wrong email or password');
+            } else {
+                setError('Server error. Please try again later.');
+            }
+        }
     };
 
     return (
@@ -60,6 +60,16 @@ function LoginPage() {
                 <button type="submit">Login</button>
                 {error && <p className="error">{error}</p>}
             </form>
+            <p className="toggle-msg">
+                <Link to="/register" className="register-link">
+                    Register here
+                </Link>
+            </p>
+            <p className="toggle-msg">
+                <Link to="/register" className="register-link">
+                    Forget password?
+                </Link>
+            </p>
         </div>
     );
 }

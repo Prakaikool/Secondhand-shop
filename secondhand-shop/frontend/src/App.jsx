@@ -10,6 +10,7 @@ import BottomNavbar from './components/BottomNavbar';
 import ProductDetail from './pages/ProductDetail';
 import AdminApp from './admin/AdminApp';
 import UserProfile from './pages/UserProfile';
+import RegisterPage from './pages/RegisterPage';
 import './main.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/admin/*" element={<AdminApp />} />
                 <Route path="/profile" element={<UserProfile />} />
+                <Route path="/register" element={<RegisterPage />} />
             </Routes>
             <BottomNavbar />
         </>

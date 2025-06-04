@@ -28,7 +28,7 @@ function LoginPage() {
                 navigate('/admin/products');
             } else {
                 localStorage.setItem('isUser', 'true');
-                navigate('/shop');
+                navigate('/profile');
             }
         } catch (err) {
           if (err.response && err.response.status === 401) {

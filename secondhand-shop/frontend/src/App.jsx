@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
 import ProductDetail from './pages/ProductDetail';
 import AdminApp from './admin/AdminApp';
+import UserProfile from './pages/UserProfile';
 import './main.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/admin/*" element={<AdminApp />} />
+                <Route path="/profile" element={<UserProfile />} />
             </Routes>
             <BottomNavbar />
         </>

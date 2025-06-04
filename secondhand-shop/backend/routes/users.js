@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 router.post('/register', async (req, res) => {
     const { email, password, name, role = 'user' } = req.body;
-    
+
     console.log('Registration received:', email, name);
 
     try {
@@ -23,6 +23,8 @@ router.post('/register', async (req, res) => {
             'INSERT INTO users (email, password, name, role) VALUES ($1, $2, $3, $4)',
             [email, hashedPassword, name, role]
         );
+
+        console.log('User inserted successfully into DB');
 
         res.status(201).json({ message: 'Registration successful' });
     } catch (err) {

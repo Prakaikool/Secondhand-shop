@@ -1,5 +1,5 @@
 .homepage {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem 0;
     margin: 0;
 }
 
@@ -76,7 +76,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    padding: 0 1rem;
+   padding-bottom: 6rem;
     max-width: 1200px;
     margin: 0 auto;
     justify-items: center;

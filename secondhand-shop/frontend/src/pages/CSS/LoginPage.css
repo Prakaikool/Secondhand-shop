@@ -1,0 +1,32 @@
+.login-page {
+  padding: 4rem;
+  color: #482711;
+}
+
+.login-page form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-page input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-page button {
+  background: #56894f;
+  color: #f6bcca;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-page .error {
+  color: red;
+  text-align: center;
+}

@@ -11,6 +11,8 @@
         "cors": "^2.8.5",
         "express": "^4.18.2",
         "multer": "^2.0.0",
+        "ra-data-simple-rest": "^5.8.3",
+        "react-admin": "^5.8.3",
         "sqlite3": "^5.1.2"
     },
     "devDependencies": {

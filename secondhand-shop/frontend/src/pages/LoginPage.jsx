@@ -23,10 +23,8 @@ function LoginPage() {
             localStorage.setItem('userName', user.name);
 
             if (user.role === 'admin') {
-                navigate('/admin/products');
-            } else {
-                navigate('/');
-            }
+                navigate('/dashboard');
+            } 
         } catch (err) {
             if (err.response && err.response.status === 401) {
                 setError('Wrong email or password');

@@ -1,0 +1,16 @@
+.admin-dashboard {
+  padding: 2rem;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.product-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 200px;
+}
+.product-card img {
+  width: 100%;
+}

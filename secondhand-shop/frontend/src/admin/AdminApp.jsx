@@ -5,7 +5,7 @@ import ProductList from './ProductList';
 import ProductEdit from './ProductEdit';
 import ProductCreate from './ProductCreate';
 
-const App = () => (
+const AdminApp = () => (
     <Admin dataProvider={simpleRestProvider('http://localhost:5000')}>
         <Resource
             name="products"
@@ -16,4 +16,4 @@ const App = () => (
     </Admin>
 );
 
-export default App;
+export default AdminApp;

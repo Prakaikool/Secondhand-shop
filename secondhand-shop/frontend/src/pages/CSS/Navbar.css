@@ -43,9 +43,6 @@
     right: 1.5rem;
     top: 20%;
     transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
 .icon {

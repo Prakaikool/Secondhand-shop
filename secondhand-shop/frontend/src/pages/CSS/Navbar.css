@@ -43,12 +43,9 @@
     right: 1.5rem;
     top: 20%;
     transform: translateY(-50%);
-}
-
-.cart-icon {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .icon {

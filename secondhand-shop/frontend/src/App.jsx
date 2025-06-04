@@ -4,7 +4,7 @@ import Cart from './pages/Cart';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ShopPage from './pages/ShopPage';
-import AdminPage from './pages/AdminPage';
+import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
 import ProductDetail from './pages/ProductDetail';
@@ -20,7 +20,7 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/admin" element={<AdminPage />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
             </Routes>
             <BottomNavbar />

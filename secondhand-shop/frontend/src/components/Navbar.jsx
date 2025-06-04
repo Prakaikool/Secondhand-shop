@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import '/Secondhand-shop/secondhand-shop/frontend/src/pages/CSS/navbar.css';
 import cartIcon from '../assets/icons/cart.png';
+import userIcon from '../assets/icons/profile.png';
 
 function Navbar() {
     return (
@@ -12,6 +13,9 @@ function Navbar() {
                     <h2> Secondhand</h2>
                 </div>
                 <div className="cart">
+                    <Link to="/login" className="login-icon">
+                        <img src={userIcon} alt="User" className="icon" />
+                    </Link>
                     <Link to="/cart" className="cart-icon">
                         <img src={cartIcon} alt="Cart" className="icon" />
                     </Link>

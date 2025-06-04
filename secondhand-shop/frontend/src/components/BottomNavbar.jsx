@@ -30,7 +30,7 @@ const BottomNavbar = () => {
                             <Link to="/contact">Contact</Link>
                         </li>
                         <li>
-                            <Link to="/customer-service">Customer service</Link>
+                            <Link to="/login">Admin login</Link>
                         </li>
                         <li>
                             <Link to="/shipping-policy">Shipping policy</Link>

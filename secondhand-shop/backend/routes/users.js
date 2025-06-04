@@ -82,4 +82,21 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.post('/register', async (req, res) => {
+    const { email, password, name } = req.body;
+
+    const existingUser = await db.query(
+        'SELECT * FROM users WHERE email = $1',
+        [email]
+    );
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    await db.query(
+        'INSERT INTO users (email, password, name) VALUES ($1, $2, $3)',
+        [email, hashedPassword, name]
+    );
+});
+
+
 module.exports = router;

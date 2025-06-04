@@ -6,33 +6,58 @@ import './CSS/LoginPage.css';
 function RegisterPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [name, setName] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
 
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const validatePassword = (password) => {
+        return /^(?=.*[a-z])(?=.*\d).{8,}$/.test(password);
+    };
+
     const handleRegister = async (e) => {
         e.preventDefault();
-        try {
-            const res = await axios.post(
-                'http://localhost:5000/users/register',
-                {
-                    email,
-                    password,
-                    name
-                }
-            );
 
-            setSuccess(res.data.message);
+        if (!validateEmail(email)) {
+            setError('Invalid email format');
+            return;
+        }
+
+        if (!validatePassword(password)) {
+            setError(
+                'Password must be at least 8 characters and contain a number'
+            );
+            return;
+        }
+
+        try {
+            await axios.post('http://localhost:5000/users/register', {
+                email,
+                password,
+                name
+            });
+
+            setSuccess('Registered successfully!');
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+            setName('');
             setError('');
-            setTimeout(() => navigate('/login'), 1500);
+
+            setTimeout(() => {
+                navigate('/login');
+            }, 1500);
         } catch (err) {
             if (err.response && err.response.status === 400) {
                 setError(err.response.data.error);
             } else {
                 setError('Server error. Please try again later.');
             }
-            setSuccess('');
         }
     };
 
@@ -59,6 +84,13 @@ function RegisterPage() {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
                 <button type="submit">Register</button>

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../pages/CSS/ProductCard.css';
 
 function ProductCard({ product, onEdit, onDelete }) {
     return (
@@ -14,8 +13,15 @@ function ProductCard({ product, onEdit, onDelete }) {
             <p>Size: {product.size}</p>
             <p>Stock: {product.stock}</p>
             <div className="actions">
-                <button className='edit-btn' onClick={() => onEdit(product)}>Edit</button>
-                <button className='delete-btn'onClick={() => onDelete(product.id)}>Delete</button>
+                <button className="edit-btn" onClick={() => onEdit(product)}>
+                    Edit
+                </button>
+                <button
+                    className="delete-btn"
+                    onClick={() => onDelete(product.id)}
+                >
+                    Delete
+                </button>
             </div>
         </div>
     );

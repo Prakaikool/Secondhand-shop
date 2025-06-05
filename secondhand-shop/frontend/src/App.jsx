@@ -11,6 +11,11 @@ import ProductDetail from './pages/ProductDetail';
 import AdminDashboard from './pages/AdminDashboard';
 import './main.css';
 
+function ProtectedRoute({ children }) {
+    const userId = localStorage.getItem('userId');
+    return userId ? children : <Navigate to="/login" replace />;
+}
+
 function App() {
     return (
         <>
@@ -24,6 +29,14 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/dashboard" element={<AdminDashboard />} />
+                <Route
+                    path="/admin"
+                    element={
+                        <ProtectedRoute>
+                            <AdminDashboard />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
             <BottomNavbar />
         </>

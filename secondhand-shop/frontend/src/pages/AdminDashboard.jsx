@@ -8,10 +8,16 @@ export default function AdminDashboard() {
     const [products, setProducts] = useState([]);
     const [editingProduct, setEditingProduct] = useState(null);
     const [showForm, setShowForm] = useState(false);
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetchProducts();
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+            navigate('/login');
+        } else {
+            fetchProducts();
+        }
     }, []);
 
     const fetchProducts = async () => {
@@ -62,10 +68,14 @@ export default function AdminDashboard() {
         }
     };
 
-    const handleLogout = () => {
+    const confirmLogout = () => {
+        setShowLogoutModal(true);
+    };
+
+    const performLogout = () => {
         localStorage.removeItem('userId');
         localStorage.removeItem('userName');
-        navigate('/');
+        navigate('/login');
     };
 
     return (
@@ -74,7 +84,7 @@ export default function AdminDashboard() {
             <p className="product-count">
                 You currently have {products.length} product(s)
             </p>
-            <div className='primary-btn'>
+            <div className="primary-btn">
                 <button
                     className="add-product-btn"
                     onClick={() => {
@@ -84,7 +94,7 @@ export default function AdminDashboard() {
                 >
                     + Add product
                 </button>
-                <button className="logout-btn" onClick={handleLogout}>
+                <button className="logout-btn" onClick={confirmLogout}>
                     Log out
                 </button>
             </div>
@@ -98,6 +108,23 @@ export default function AdminDashboard() {
                         setEditingProduct(null);
                     }}
                 />
+            )}
+
+            {showLogoutModal && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <p>Do you want to log out?</p>
+                        <button className="yes-btn" onClick={performLogout}>
+                            Yes
+                        </button>
+                        <button
+                            className="no-btn"
+                            onClick={() => setShowLogoutModal(false)}
+                        >
+                            No
+                        </button>
+                    </div>
+                </div>
             )}
 
             <div className="product-list">

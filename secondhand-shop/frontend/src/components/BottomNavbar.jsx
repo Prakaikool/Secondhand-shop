@@ -30,13 +30,13 @@ const BottomNavbar = () => {
                             <Link to="/contact">Contact</Link>
                         </li>
                         <li>
-                            <Link to="/login">Admin login</Link>
-                        </li>
-                        <li>
                             <Link to="/shipping-policy">Shipping policy</Link>
                         </li>
                         <li>
                             <Link to="/return-policy">Return policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/login">Admin login</Link>
                         </li>
                     </ul>
                 </div>

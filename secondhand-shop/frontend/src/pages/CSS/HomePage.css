@@ -76,7 +76,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-   padding-bottom: 6rem;
     max-width: 1200px;
     margin: 0 auto;
     justify-items: center;
@@ -121,4 +120,65 @@
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.more-btn {
+    color: #f6bcca;
+    background-color: #56894f;
+    font-family: 'Kumar One', serif;
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.more-btn:hover {
+    background-color: #2e5729;
+    color: #f6bcca;
+}
+
+.button-shop {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.about-preview {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #fff0f4;
+    border: 4px solid #a9d197;
+    margin-top: 4rem;
+}
+
+.about-preview h2 {
+    font-family: 'Kumar One', serif;
+    color: #482711;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-preview p {
+    font-family: 'Karla', sans-serif;
+    color: #482711bf;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+.about-preview button {
+    background-color: #56894f;
+    color: #f6bcca;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about-preview button:hover {
+    background-color: #2e5729;
 }

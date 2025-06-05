@@ -24,10 +24,10 @@ function LoginPage() {
 
             if (user.role === 'admin') {
                 navigate('/dashboard');
-            } 
+            }
         } catch (err) {
             if (err.response && err.response.status === 401) {
-                setError('Wrong email or password');
+                setError('● Email or password are incorrect');
             } else {
                 setError('Server error. Please try again later.');
             }
@@ -36,8 +36,9 @@ function LoginPage() {
 
     return (
         <div className="login-container">
-            <h1>Login Page</h1>
+            <h2>Admin Login</h2>
             <form onSubmit={handleLogin}>
+                <label htmlFor="Email">Email</label>
                 <input
                     type="email"
                     placeholder="Email"
@@ -45,6 +46,7 @@ function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
+                <label htmlFor="password">Password</label>
                 <input
                     type="password"
                     placeholder="Password"

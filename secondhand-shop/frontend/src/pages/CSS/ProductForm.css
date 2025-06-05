@@ -52,7 +52,7 @@
 }
 
 .save-btn:hover {
-  background-color: #3d6b38;
+  background-color: #3d6b38 !important;
 }
 
 .cancel-btn {

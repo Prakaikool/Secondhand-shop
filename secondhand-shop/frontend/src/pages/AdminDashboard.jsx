@@ -74,18 +74,20 @@ export default function AdminDashboard() {
             <p className="product-count">
                 You currently have {products.length} product(s)
             </p>
-            <button
-                className="add-product-btn"
-                onClick={() => {
-                    setEditingProduct(null);
-                    setShowForm(true);
-                }}
-            >
-                + Add product
-            </button>
-            <button className="logout-btn" onClick={handleLogout}>
-                Log out
-            </button>
+            <div className='primary-btn'>
+                <button
+                    className="add-product-btn"
+                    onClick={() => {
+                        setEditingProduct(null);
+                        setShowForm(true);
+                    }}
+                >
+                    + Add product
+                </button>
+                <button className="logout-btn" onClick={handleLogout}>
+                    Log out
+                </button>
+            </div>
 
             {showForm && (
                 <ProductForm

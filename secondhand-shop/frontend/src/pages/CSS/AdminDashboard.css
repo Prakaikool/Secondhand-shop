@@ -72,6 +72,7 @@
 
 .product-card p {
     margin-bottom: 1rem;
+    font-weight: normal !important;
 }
 
 .product-card .edit-btn {

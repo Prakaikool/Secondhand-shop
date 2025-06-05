@@ -1,4 +1,5 @@
 import React from 'react';
+import '../pages/CSS/ProductCard.css'
 
 function ProductCard({ product, onEdit, onDelete }) {
     return (
@@ -8,10 +9,12 @@ function ProductCard({ product, onEdit, onDelete }) {
                 alt={product.name}
             />
             <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
-            <p>Size: {product.size}</p>
-            <p>Stock: {product.stock}</p>
+            <p className="description">{product.description}</p>
+            <div className='product-info'>
+                <p>Price: ${product.price}</p>
+                <p>Size: {product.size}</p>
+                <p>Stock: {product.stock}</p>
+            </div>
             <div className="actions">
                 <button className="edit-btn" onClick={() => onEdit(product)}>
                     Edit

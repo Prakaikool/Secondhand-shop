@@ -18,7 +18,7 @@ export default function AdminDashboard() {
         } else {
             fetchProducts();
         }
-    }, []);
+    }, [navigate]);
 
     const fetchProducts = async () => {
         try {

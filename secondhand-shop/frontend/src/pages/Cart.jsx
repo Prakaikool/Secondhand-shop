@@ -18,7 +18,7 @@ function CartPage() {
                 <div className="empty-cart">
                     <p>Your cart is empty.</p>
                     <Link to="/shop" className="shop-link">
-                        SHOP OUR PRODUCTS
+                        Shop our products
                     </Link>
                 </div>
             ) : (

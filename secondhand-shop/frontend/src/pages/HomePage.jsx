@@ -57,10 +57,13 @@ function HomePage() {
                         key={product.id}
                         className="product-card"
                     >
-                        <img
-                            src={`http://localhost:5000${product.image_url}`}
-                            alt={product.name}
-                        />
+                        <div className="image-container">
+                            <img
+                                src={`http://localhost:5000${product.image_url}`}
+                                alt={product.name}
+                            />
+                            <span className="new-badge">NEW</span>
+                        </div>
                         <h3>{product.name}</h3>
                         <p>${product.price}</p>
                     </Link>
@@ -131,8 +134,8 @@ function HomePage() {
 
             <section className="mission">
                 <p>
-                    - We make fashion circular by giving clothes a second life and
-                    helping you shop with purpose -
+                    - We make fashion circular by giving clothes a second life
+                    and helping you shop with purpose -
                 </p>
             </section>
         </div>

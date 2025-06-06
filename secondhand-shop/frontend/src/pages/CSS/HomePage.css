@@ -122,6 +122,23 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.image-container {
+  position: relative;
+}
+
+.new-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: #482711;
+  background-color: #f6bcca;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
 .more-btn {
     color: #f6bcca;
     background-color: #56894f;

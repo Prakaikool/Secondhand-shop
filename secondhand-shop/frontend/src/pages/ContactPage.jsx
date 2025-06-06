@@ -3,13 +3,44 @@ import './CSS/ContactPage.css';
 function ContactPage() {
     return (
         <div className="contact-container">
-            <h2 className="contact-title">Contact us</h2>
+            <h2 className="contact-title">Contact Us</h2>
+
             <div className="contact-content">
-                <div className="contact-text">
+                <p className="contact-description">
+                    If you have any questions about your order, shipping, or
+                    returns. We're happy to help!
+                </p>
+
+                <div className="contact-info">
                     <p>
-                        If you have any questions about your order, shipping, or
-                        returns. We're happy to help!
+                       Active: Everyday 11am - 7pm
                     </p>
+                    <p>
+                        Email:{' '}
+                        <a href="mailto:shupashupa@support.com">
+                            shupashupa@support.com
+                        </a>
+                    </p>
+                </div>
+
+                <div className="contact-social">
+                    <p>Follow us for style inspo & updates:</p>
+                    <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram
+                    </a>{' '}
+                    |
+                    <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {' '}
+                        Facebook
+                    </a>
                 </div>
             </div>
         </div>

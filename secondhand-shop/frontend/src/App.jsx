@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import BottomNavbar from './components/BottomNavbar';
 import ProductDetail from './pages/ProductDetail';
 import AdminDashboard from './pages/AdminDashboard';
+import ScrollToTop from './components/ScrollToTop';
 import './main.css';
 
 function ProtectedRoute({ children }) {
@@ -20,6 +21,7 @@ function App() {
     return (
         <>
             <Navbar />
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/shop" element={<ShopPage />} />

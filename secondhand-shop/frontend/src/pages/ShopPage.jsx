@@ -10,6 +10,7 @@ function ShopPage() {
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [addedItemId, setAddedItemId] = useState(null);
+    const [outOfStockId, setOutOfStockId] = useState(null);
 
     const { addToCart } = useContext(CartContext);
 
@@ -53,37 +54,56 @@ function ShopPage() {
             </div>
 
             <div className="product-container">
-                {filteredProducts.map((product) => (
-                    <div className="product-card" key={product.id}>
-                        <Link to={`/products/${product.id}`}>
-                            <img
-                                src={`http://localhost:5000${product.image_url}`}
-                                alt={product.name}
-                            />
-                            <h3>{product.name}</h3>
-                            <p>${product.price}</p>
-                        </Link>
-                        <button
-                            className="add-to-cart"
-                            onClick={() => {
-                                const wasAdded = addToCart(product);
-                                if (wasAdded) {
-                                    setAddedItemId(product.id);
-                                    setTimeout(
-                                        () => setAddedItemId(null),
-                                        1500
-                                    );
-                                }
-                            }}
-                        >
-                            ADD TO CART
-                        </button>
+                {filteredProducts.map((product) => {
+                    const isOutOfStock = product.stock === 0;
 
-                        {addedItemId === product.id && (
-                            <p className="added-msg">ADDED!</p>
-                        )}
-                    </div>
-                ))}
+                    return (
+                        <div className="product-card" key={product.id}>
+                            <Link to={`/products/${product.id}`}>
+                                <img
+                                    src={`http://localhost:5000${product.image_url}`}
+                                    alt={product.name}
+                                />
+                                <h3>{product.name}</h3>
+                                <p>${product.price}</p>
+                            </Link>
+                            <button
+                                className="add-to-cart"
+                                onClick={() => {
+                                    const wasAdded = addToCart(product);
+                                    if (wasAdded) {
+                                        setAddedItemId(product.id);
+                                        setTimeout(
+                                            () => setAddedItemId(null),
+                                            1500
+                                        );
+                                    } else {
+                                        setOutOfStockId(product.id);
+                                        setTimeout(
+                                            () => setOutOfStockId(null),
+                                            1500
+                                        );
+                                    }
+                                }}
+                                disabled={product.stock === 0}
+                            >
+                                {product.stock === 0
+                                    ? 'OUT OF STOCK'
+                                    : 'ADD TO CART'}
+                            </button>
+
+                            {addedItemId === product.id && !isOutOfStock && (
+                                <p className="added-msg">Item added!</p>
+                            )}
+
+                            {outOfStockId === product.id && (
+                                <p className="stock-msg">
+                                    Not enough in stock!
+                                </p>
+                            )}
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

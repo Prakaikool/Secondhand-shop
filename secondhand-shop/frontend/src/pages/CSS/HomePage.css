@@ -123,20 +123,32 @@
 }
 
 .image-container {
-  position: relative;
+    position: relative;
+}
+
+.search-results .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.msg-not-found {
+    font-family: 'Karla', sans-serif;
+  font-size: 1.2rem;
 }
 
 .new-badge {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  color: #482711;
-  background-color: #f6bcca;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.7rem;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  z-index: 1;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: #482711;
+    background-color: #f6bcca;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    z-index: 1;
 }
 
 .more-btn {
@@ -212,7 +224,7 @@
 
 .about-preview button,
 .newsletter button {
-  font-family: 'Kumar One', serif;
+    font-family: 'Kumar One', serif;
     background-color: #56894f;
     color: #f6bcca;
     border: none;
@@ -289,16 +301,16 @@
 }
 
 .mission {
-  padding: 1rem 2rem;
-  text-align: center;
-  margin-top: 6rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-top: 6rem;
 }
 
 .mission p {
-  font-family: 'Karla', sans-serif;
-  color: #482711;
-  font-size: 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  line-height: 1.6;
+    font-family: 'Karla', sans-serif;
+    color: #482711;
+    font-size: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.6;
 }

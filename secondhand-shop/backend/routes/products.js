@@ -16,11 +16,21 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', async (req, res) => {
+    const search = req.query.search || '';
+
     try {
-        const result = await db.query('SELECT * FROM products');
+        const result = await db.query(
+            `SELECT products.*, categories.name AS category_name
+           FROM products
+           JOIN categories ON products.category_id = categories.id
+           WHERE LOWER(products.name) LIKE LOWER($1)
+              OR LOWER(categories.name) LIKE LOWER($1)`,
+            [`%${search}%`]
+        );
+
         res.json(result.rows);
     } catch (err) {
-        console.error('Error fetching products:', err);
+        console.error('Error fetching products with search:', err);
         res.status(500).json({ error: 'Server error' });
     }
 });

@@ -20,7 +20,7 @@ function HomePage() {
         product.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    const newProducts = filteredProducts.slice(0, 3);
+    const newProducts = products.slice(0, 3);
 
     return (
         <div className="homepage">
@@ -49,6 +49,33 @@ function HomePage() {
             </div>
 
             {}
+            {search && (
+                <div className="search-results">
+                    <h2 className="section-title">Search Results</h2>
+                    <div className="product-grid">
+                        {filteredProducts.length > 0 ? (
+                            filteredProducts.map((product) => (
+                                <Link
+                                    to={`/products/${product.id}`}
+                                    key={product.id}
+                                    className="product-card"
+                                >
+                                    <img
+                                        src={`http://localhost:5000${product.image_url}`}
+                                        alt={product.name}
+                                    />
+                                    <h3>{product.name}</h3>
+                                    <p>${product.price}</p>
+                                </Link>
+                            ))
+                        ) : (
+                            <p className='msg-not-found'>No products found.</p>
+                        )}
+                    </div>
+                </div>
+            )}
+
+            {}
             <h2 className="section-title">See what's new</h2>
             <div className="product-grid">
                 {newProducts.map((product) => (
@@ -69,8 +96,8 @@ function HomePage() {
                     </Link>
                 ))}
             </div>
+
             <div className="button-shop">
-                {' '}
                 <button className="more-btn" onClick={() => navigate('/shop')}>
                     View all products
                 </button>

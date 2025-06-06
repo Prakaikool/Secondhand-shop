@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import '/Secondhand-shop/secondhand-shop/frontend/src/pages/CSS/navbar.css';
 import cartIcon from '../assets/icons/cart.png';
+import CartContext from '../components/CartContext';
 
 function Navbar() {
+    const { cartCount } = useContext(CartContext);
+
     return (
         <header className="navbar">
             <div className="top-navbar">Worldwide shipping!</div>
@@ -14,6 +18,9 @@ function Navbar() {
                 <div className="cart">
                     <Link to="/cart" className="cart-icon">
                         <img src={cartIcon} alt="Cart" className="icon" />
+                        {cartCount > 0 && (
+                            <span className="cart-count">{cartCount}</span>
+                        )}
                     </Link>
                 </div>
             </div>

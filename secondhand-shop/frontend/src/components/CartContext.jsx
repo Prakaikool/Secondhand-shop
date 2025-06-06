@@ -49,6 +49,11 @@ export function CartProvider({ children }) {
         setLastTriedItemId(null);
     };
 
+    const cartCount = cartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
+
     return (
         <CartContext.Provider
             value={{
@@ -57,7 +62,8 @@ export function CartProvider({ children }) {
                 removeFromCart,
                 clearCart,
                 cartMessage,
-                lastTriedItemId
+                lastTriedItemId,
+                cartCount
             }}
         >
             {children}
